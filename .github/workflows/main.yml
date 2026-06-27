@@ -2,11 +2,12 @@ name: Generate SBOM Report with Syft
 
 on:
   workflow_dispatch:
-    inputs:
-      testType:
-        description: 'Type of tests to run'
-        required: true
-        default: 'integration'
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   generate-sbom:
